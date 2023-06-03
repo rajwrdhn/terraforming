@@ -1,3 +1,4 @@
+#plugins
 terraform {
   required_providers {
     aws = {
@@ -16,8 +17,13 @@ provider "aws" {
 resource "aws_vpc" "TerraformVPC" {
   cidr_block = "198.162.0.0/24"
   tags = {
-    Name = var.inputvpcname
+    Name = var.inputvpcname # could also have var.vpcname and set to rajsvpc name
   }
+}
+
+variable "vpcname" {
+  type = string
+  default = "rajsvpc"
 }
 
 variable "inputvpcname" {
