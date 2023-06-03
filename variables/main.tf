@@ -33,6 +33,22 @@ variable "map1" {
   }
 }
 
+variable "mytuple" {
+  type = tuple([ string, number,string ])
+  default = [ "value", 0, "value2" ]
+}
+
+variable "myobject" {
+  type = object({
+    name = string
+    port = number
+  })
+  default = {
+    name = "raj"
+    port = 80
+  }
+}
+
 resource "aws_vpc" "vpcname" {
     cidr_block = "10.0.0.0/24"
     tags = {
