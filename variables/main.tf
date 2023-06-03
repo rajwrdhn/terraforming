@@ -36,7 +36,7 @@ variable "map1" {
 resource "aws_vpc" "vpcname" {
     cidr_block = "10.0.0.0/24"
     tags = {
-        Name = var.inputname
+        Name = var.inputname # can also put var.vpcname as a default name
     }
 }
 
