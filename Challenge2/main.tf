@@ -19,6 +19,7 @@ resource "aws_instance" "ec2" {
       Name = var.ec2name
     }
     security_groups = [aws_security_group.sg-webserver.name]
+    user_data = file("server-script.sh")
     
 }
 
